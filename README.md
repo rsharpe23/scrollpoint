@@ -1,2 +1,2 @@
 # scrollpoint
-See demo: http://rsharpe-blog.loc/projects/scrollpoint/
+See demo: https://rsharpe-blog.ru/projects/scrollpoint/
