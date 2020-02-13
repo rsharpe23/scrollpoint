@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ScrollPoint</title>
+
+  <style>
+    .screen {
+      height: 125vh;
+      background-color: #ddd;
+      border: 1px solid #333;
+      text-align: center;
+      font-size: 10rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="screen">1</div>
+    <div class="screen">2</div>
+  </div>
+
+  <script src="vendors/jquery.min.js"></script>
+  <script src="dist/jquery.scrollpoint.js"></script>
+
+  <script>
+    // Sample #1
+    $('.screen').scrollpoint({
+      enter() {
+        console.log('enter');
+      },
+
+      stay() {
+        console.log('stay');
+      },
+
+      exit() {
+        console.log('exit');
+      }
+    });
+
+    // Sample #2
+    // $('.screen').scrollpoint({
+    //   once: true,
+    //   offset: '25%',
+
+    //   enter() {
+    //     console.log('enter');
+    //   },
+    // });
+
+    // HACK: To invoke the enter event immediately if a scrollpoint is inside the viewport
+    $(window).on('load', e => $(e.currentTarget).trigger('resize'));
+  </script>
+</body>
+
+</html>
